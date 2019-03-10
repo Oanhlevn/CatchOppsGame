@@ -3,8 +3,8 @@ let context;
 
 canvas=document.createElement("canvas"); 
 context = canvas.getContext("2d"); 
-canvas.width = 512; 
-canvas.height = 480; 
+canvas.width = 600; 
+canvas.height = 500; 
 
 document.body.appendChild(canvas); 
 
@@ -23,13 +23,13 @@ let catcherReady;
 function loadImages()
 { bgImage = new Image(); 
   bgImage.onload = function(){ bgReady=true; };
-  bgImage.source= "image/catchopps2bg.jpeg";
+  bgImage.src= "images/catchoppsbg.jpeg";
   oppImage = new Image(); 
   oppImage.onload = function(){ oppReady=true; };
-  bgImage.source= "image/opps1.png"; 
+  bgImage.src= "images/opps2.png"; 
   catcherImage= new Image();
   catcherImage.onload =function(){catcherReady=true;};
-  catcherImage.source="image/catcher2.jpg"
+  catcherImage.src="images/catcher4.png"
 }
 let oppX=100;
 let oppY=100;
