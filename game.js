@@ -45,11 +45,9 @@ function setupKeyboardListeners()
 let update = function ()
 {elapsedTime= Math.floor((Date.now() - startTime)/1000);  
 
-if (38 in keyDown){if (catcherY > 0 && catcherY < canvas.height) {catcherY -= 5;}
-else {catcherY +=2; }}
+if (38 in keyDown){if (catcherY > 0 && catcherY < canvas.height) {catcherY -= 5;}}
 
-if (40 in keyDown){if (catcherY > 0 && catcherY < canvas.height ) {catcherY += 5;} 
-else {catcherY -=2; }} 
+if (40 in keyDown){if (catcherY >= 0 && catcherY <= canvas.height ) {catcherY += 5;} } 
 
 if (37 in keyDown){if (catcherX >= 0 && catcherY <= canvas.width  ) {catcherX -= 5;}}
 if (39 in keyDown){if (catcherX >= 0 && catcherX <= canvas.width  ) {catcherX += 5;}}
