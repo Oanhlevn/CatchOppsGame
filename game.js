@@ -46,10 +46,26 @@ function setupKeyboardListeners() {
 let update = function () {
   elapsedTime = Math.floor((Date.now() - startTime) / 1000);
 
-  if (38 in keyDown) { catcherY -= 5; }
-  if (40 in keyDown) { catcherY += 5; }
-  if (37 in keyDown) { catcherX -= 5; }
-  if (39 in keyDown) { catcherX += 5; }
+
+  if (38 in keyDown) { // up key
+    if (catcherY >= 10 && catcherY <= canvas.height)
+      catcherY -= 5;
+  }
+
+  if (40 in keyDown) { // down key
+    if (catcherY >= 0 && catcherY + 139 <= canvas.height)
+      catcherY += 5;
+  }
+
+  if (37 in keyDown) { // left key
+    if (catcherX >= 5 && catcherX <= canvas.width)
+      catcherX -= 5;
+  }
+  if (39 in keyDown) { // right key
+    if (catcherX >= 0 && catcherX + 100 <= canvas.width) {
+      catcherX += 5;
+    }
+  }
 
   if (
     catcherX <= (oppX + 70)
