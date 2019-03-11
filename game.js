@@ -79,12 +79,20 @@ let update = function () {
     oppY = Math.random() * (canvas.height - 80);
   }
 };
-let render = function () {
-  if (bgReady) { context.drawImage(bgImage, 0, 0); }
-  if (oppReady) { context.drawImage(oppImage, oppX, oppY); }
-  if (catcherReady) { context.drawImage(catcherImage, catcherX, catcherY); }
-  context.fillText(`Remaining time: ${roundTime - elapsedTime}`, 20, 100)
-}
+let render = function()
+{    let timeleft =roundTime-elapsedTime; 
+    
+    if (bgReady ) {context.drawImage(bgImage,0,0); }
+    if (oppReady) {context.drawImage(oppImage,oppX,oppY); }
+    if (catcherReady) { context.drawImage(catcherImage, catcherX, catcherY); }
+    if (timeleft>0)
+    {context.fillText(`Remaining time: ${timeleft}`,20,50);}
+    else {context.fillText(`Game Over`,250,200); deleteAnimationFram (main); }
+    context.fillText(`Caught stars: ${oppNum}`,20,30);
+    //if ( catcherX == canvas.width || catcherY == canvas.height ) 
+    //{ catcherX = canvas.width; catcherY = canvas.height; }
+
+ };
 let main = function () {
   update(); render(); requestAnimationFrame(main);
 }
