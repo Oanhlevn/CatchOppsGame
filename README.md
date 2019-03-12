@@ -2,7 +2,7 @@
 
 Created with love by: `Oanh Le`
   
-View online at: 
+View online at: https://boring-rosalind-3dda24.netlify.com/
   
 This is a game to practice Canvas. 
 
